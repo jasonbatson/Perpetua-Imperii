@@ -1,0 +1,40 @@
+country_decisions = {
+
+	rom_dismantle_hre = {
+		potential = {
+			tag = ROM
+			owns = 118
+			NOT = { has_global_flag = dismantle_hre }
+		}
+		effect = {
+			dismantle_hre = yes
+			set_global_flag = dismantle_hre
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	rom_embrace_orthodox = {
+		potential = {
+			tag = ROM
+			religion = catholic
+			owns = 118
+		}
+		effect = {
+			change_religion = orthodox
+			
+			add_country_modifier = {
+				name = "rom_embrace_orthodoxy"
+				duration = 9125
+			}
+                        118 = {
+                                change_religion = orthodox
+                        }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

@@ -1,0 +1,699 @@
+rom_reforms = {
+	slot = 1
+	generic = no
+	ai = yes
+
+	potential = {
+		tag = ROM
+	}
+
+	has_country_shield = yes
+
+	rom_rebuild_legion = {
+		icon = mission_assemble_an_army
+		required_missions = { }
+		ai_weight = {
+			factor = 5
+		}
+		trigger = {
+			army_size_percentage = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "rom_rebuild_imperial_legion"
+				duration = 18250
+			}
+		}
+	}
+}
+
+rom_slot_2 = {
+	slot = 2 
+	generic = no
+	ai = yes
+
+	potential = {
+		tag = ROM
+	}
+
+	has_country_shield = yes
+
+	rom_transalpine_gaul = {
+		icon = mission_conquer_50_development
+		required_missions = {
+			rom_recover_rome 
+		}
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = liguria_area
+				area = piedmont_area
+				area = lombardy_area
+				area = venetia_area
+				area = emilia_romagna_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			liguria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			piedmont_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lombardy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			venetia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			emilia_romagna_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_manpower = 2
+				add_base_tax = 2
+				add_base_production = 2
+			}
+			liguria_area = {
+				change_culture = ROOT
+				change_religion = ROOT
+			}
+			piedmont_area = {
+				change_culture = ROOT
+				change_religion = ROOT
+			}
+			lombardy_area = {
+				change_culture = ROOT
+				change_religion = ROOT
+			}
+			venetia_area = {
+				change_culture = ROOT
+				change_religion = ROOT
+			}
+			emilia_romagna_area = {
+				change_culture = ROOT
+				change_religion = ROOT
+			}
+		}
+	}
+
+	rom_recover_gaul = {
+		icon = mission_unite_home_region
+		position = 5
+		required_missions = {
+			rom_italia_united
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = france_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			france_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			france_region = {
+				change_culture = ROOT
+			}
+			home_counties_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			wessex_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_anglia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_midlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yorkshire_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_midlands_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			wales_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			247 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			246 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	# recover britannia
+	rom_recover_brittania = {
+		icon = mission_pf_map_table
+		position = 6
+		required_missions = {
+			rom_recover_gaul
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = home_counties_area
+				area = wessex_area
+				area = east_anglia_area
+				area = east_midlands_area
+				area = yorkshire_area
+				area = west_midlands_area
+				area = wales_area
+				province_id = 247
+				province_id = 246
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			home_counties_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			wessex_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_anglia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yorkshire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_midlands_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			247 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			246 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			british_isles_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			home_counties_area = {
+				change_culture = ROOT
+			}
+			wessex_area = {
+				change_culture = ROOT
+			}
+			east_anglia_area = {
+				change_culture = ROOT
+			}
+			east_midlands_area = {
+				change_culture = ROOT
+			}
+			yorkshire_area = {
+				change_culture = ROOT
+			}
+			west_midlands_area = {
+				change_culture = ROOT
+			}
+			wales_area = {
+				change_culture = ROOT
+			}
+			247 = {
+				change_culture = ROOT
+			}
+			246 = {
+				change_culture = ROOT
+			}
+		}
+	}
+}
+
+
+rom_italia = {
+	slot = 3
+	generic = no #if a mission without generic = yes wants this slot then it overrides this. 
+	ai = yes
+
+
+	potential = {
+		tag = ROM
+		NOT = { map_setup = map_setup_random }
+	}
+
+	has_country_shield = yes
+	
+	rom_recover_rome = {
+		icon = mission_pf_cross
+		required_missions = {  } #None
+		ai_weight = {
+			factor = 5
+		}
+		ai_priority = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 118
+							}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 118
+		}
+		effect = {
+			elector = yes
+			118 = {
+				move_capital_effect = yes
+				add_base_manpower = 3
+				add_base_tax = 3
+				add_base_production = 3
+			}
+			italy_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lazio_area = {
+				change_culture = ROOT
+				change_religion = ROOT
+			}
+			central_italy_area = {
+				change_culture = ROOT
+				change_religion = ROOT
+			}
+			add_country_modifier = {
+				name = "rom_rome_reclaimed"
+				duration = 18250
+			}
+		}
+	}
+	rom_magna_graecia = {
+		icon = mission_italian_condottiere
+		required_missions = { rom_recover_rome }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = apulia_area
+				area = calabria_area
+				area = naples_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			naples_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_manpower = 3
+				add_base_tax = 3
+				add_base_production = 3
+			}
+			sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			apulia_area = {
+				change_culture = ROOT
+			}
+			calabria_area = {
+				change_culture = ROOT
+			}
+			naples_area = {
+				change_culture = ROOT
+			}
+		}
+	}
+	rom_sicily = {
+		icon = mission_rb_mediterranean_authority
+		required_missions = { rom_magna_graecia }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 124
+				province_id = 125
+				province_id = 2982
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 124
+			owns_or_non_sovereign_subject_of = 125
+			owns_or_non_sovereign_subject_of = 2982
+		}
+		effect = {
+			add_country_modifier = {
+				name = "theme_of_sicily"
+				duration = 5475
+			}
+			sicily_area = {
+				change_culture = ROOT
+			}
+			western_sicily_area = {
+				change_culture = ROOT
+			}
+		}
+	}
+
+	rom_italia_united = {
+		icon = mission_empire
+		required_missions = {
+			rom_sicily
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = italy_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			italy_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tunisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			france_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			iberia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			set_government_rank = 3
+			add_stability = 3
+		}
+	}
+
+	rom_recover_africa = {
+		icon = mission_pf_map_table
+		required_missions = {
+			rom_italia_united
+		}
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = tunisia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			maghreb_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	rom_conquer_maghreb = {
+		icon = mission_unite_home_region
+		required_missions = {
+			rom_recover_africa
+		}
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = maghreb_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			maghreb_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			maghreb_region = {
+				change_culture = ROOT
+			}
+		}
+	}
+}
+
+rom_slot_4 = {
+	slot = 4	
+	generic = no
+	ai = yes
+
+	potential = {
+		tag = ROM
+	}
+
+	has_country_shield = yes
+
+	rom_recover_central_italy = {
+		icon = mission_landsknecht_soldier
+		required_missions = { rom_recover_rome }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = tuscany_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			central_italy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tuscany_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_base_manpower = 2
+				add_base_tax = 2
+				add_base_production = 2
+			}
+			tuscany_area = {
+				change_culture = ROOT
+				change_religion = ROOT
+			}
+		}
+	}
+
+	rom_recover_western_isles = {
+		icon = mission_invade_island
+		required_missions = { 
+			rom_recover_central_italy
+		}
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = corsica_sardinia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			corsica_sardinia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			corsica_sardinia_area = {
+				change_culture = ROOT
+			}
+		}
+	}
+
+	rom_recover_hispania = {
+		icon = mission_unite_home_region
+		required_missions = {
+			rom_italia_united
+		}
+		position = 5
+		ai_weight = {
+			factor = 5
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = iberia_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			iberia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			iberia_region = {
+				change_culture = ROOT
+			}
+		}
+	}
+}
+
+rom_overseas = {
+	slot = 5
+	generic = no
+	ai = yes
+
+	potential = {
+		tag = ROM
+		NOT = { map_setup = map_setup_random }
+	}
+	
+	has_country_shield = yes
+
+	rom_byz_alliance = {
+		icon = mission_alliances
+		required_missions = { }
+		ai_weight = {
+			factor = 5
+		}
+		trigger = {
+			BYZ = {
+                has_opinion = { who = ROM value = 100 }
+			}
+		}
+		effect = {
+			create_alliance = BYZ
+		}
+	}
+
+	rom_overtakes_byz = {
+		icon = mission_empire
+		required_missions = {
+			rom_byz_alliance
+		}
+		ai_weight = {
+			factor = 5
+		}
+		trigger = {
+			government_rank = 3
+			BYZ = {
+                has_opinion = { who = ROM value = 200 }
+			}
+		}
+		effect = {
+			create_union = BYZ
+		}
+	}
+
+	rom_east_west_union = {
+		icon = mission_monarch_in_throne_room
+		required_missions = {
+			rom_overtakes_byz
+		}
+		ai_weight = {
+			factor = 5
+		}
+		trigger = {
+			senior_union_with = BYZ
+			total_development = 1000
+		}
+		effect = {
+			inherit = BYZ
+		}
+	}
+}

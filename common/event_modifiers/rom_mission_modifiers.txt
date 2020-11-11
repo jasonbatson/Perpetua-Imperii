@@ -1,0 +1,20 @@
+rom_rebuild_imperial_legion = {
+	land_morale = 0.25
+	land_maintenance_modifier = -0.25
+}
+
+rom_rebuild_navy = {
+	naval_morale = 0.25
+	naval_maintenance_modifier = -0.25
+}
+
+rom_embrace_orthodoxy = {
+	global_missionary_strength = 0.10
+}
+
+rom_rome_reclaimed = {
+    legitimacy = 2
+	ae_impact = -0.5
+    core_creation = -0.5
+    manpower_recovery_speed = 0.5
+}
