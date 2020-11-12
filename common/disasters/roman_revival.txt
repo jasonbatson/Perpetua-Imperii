@@ -1,0 +1,72 @@
+roman_revival = {
+	potential = {
+		tag = PAP
+		R01 = {
+			num_of_owned_provinces_with = {
+				value = 1
+			}
+		}
+	}
+	
+	can_start = {
+		has_country_modifier = "rom_denounced_pap"
+	}
+	
+	can_stop = {
+		NOT = {
+			R01 = {
+				num_of_owned_provinces_with = {
+					value = 1
+					culture = roman
+				}
+			}
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 30
+			num_of_owned_provinces_with = {
+				value = 1
+				unrest = 0
+			}
+		}
+		
+	}
+	
+	
+	
+	can_end = {
+		NOT = {
+			R01 = {
+				num_of_owned_provinces_with = {
+					value = 1
+					culture = roman
+				}
+			}
+		}
+	}
+	
+
+	modifier = {
+		diplomatic_reputation = -10
+		
+		global_unrest = 20
+		stability_cost_modifier = 1
+		harsh_treatment_cost = 1
+		
+		min_autonomy = 75
+	}
+	
+	
+	on_start = romanrevival.1
+	on_end = romanrevival.2
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+		}
+	}
+}
+

@@ -1,7 +1,7 @@
 # - Umbria
 
-owner = ROM
-controller = ROM
+owner = PAP
+controller = PAP
 culture = umbrian 
 religion = catholic 
 hre = yes
@@ -11,7 +11,7 @@ trade_goods = wine
 base_manpower = 1
 capital = "Perugia" 
 is_city = yes
-add_core = ROM
+add_core = PAP
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

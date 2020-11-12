@@ -1,10 +1,29 @@
 country_decisions = {
 
+	r01_form_rome = {
+		potential = {
+			tag = R01
+			NOT = { has_global_flag = dismantle_hre }
+		}
+		allow = {
+			owns = 118
+		}
+		effect = {
+			change_tag = ROM
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	rom_dismantle_hre = {
 		potential = {
 			tag = ROM
 			owns = 118
 			NOT = { has_global_flag = dismantle_hre }
+		}
+		allow = {
+			government_rank = 3
 		}
 		effect = {
 			dismantle_hre = yes
@@ -15,11 +34,30 @@ country_decisions = {
 		}
 	}
 
+	rom_denounce_pope = {
+		potential = {
+			tag = R01
+			PAP = {
+				NOT = {
+					has_country_modifier = "rom_denounced_pap" 
+				}
+			}
+		}
+		effect = {
+			PAP = {
+				add_country_modifier = {
+					name = "rom_denounced_pap"
+					duration = -1
+				}
+			}
+		}
+	}
+
 	rom_embrace_orthodox = {
 		potential = {
-			tag = ROM
+			tag = R01
 			religion = catholic
-			owns = 118
+			primary_culture = roman
 		}
 		effect = {
 			change_religion = orthodox
@@ -28,9 +66,6 @@ country_decisions = {
 				name = "rom_embrace_orthodoxy"
 				duration = 9125
 			}
-                        118 = {
-                                change_religion = orthodox
-                        }
 		}
 		ai_will_do = {
 			factor = 1

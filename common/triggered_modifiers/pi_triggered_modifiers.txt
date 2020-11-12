@@ -1,0 +1,9 @@
+rom_roman_empire = {
+    potential = { #Cleans up the triggered modifier list, so it isn't filled with irrelevant modifiers.
+		always = yes
+	}
+
+	trigger = {
+		primary_culture = roman
+	}
+}

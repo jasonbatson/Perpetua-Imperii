@@ -1,18 +1,20 @@
-#119 - Ancona
+#120 - Abbruzzi
 
 owner = PAP
 controller = PAP
-culture = umbrian 
+culture = neapolitan 
 religion = catholic 
-hre = yes 
+hre = no 
 base_tax = 5 
-base_production = 5    
-trade_goods = paper
-base_manpower = 4    
-capital = "Ancona" 
+base_production = 5 
+trade_goods = wine 
+base_manpower = 3
+capital = "L'Aquila" 
 is_city = yes 
-estate = estate_burghers #Or nobles
+add_core = NAP
 add_core = PAP
+
+
 
 discovered_by = western
 discovered_by = eastern

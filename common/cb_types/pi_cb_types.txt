@@ -1,0 +1,34 @@
+cb_restore_empire = { 
+	prerequisites = { 
+		is_neighbor_of = FROM
+		FROM = { 
+			primary_culture = roman
+		 	} 
+		#  any_owned_province = { 
+		# 	OR = { 
+		# 		region = italy_region 
+		# 	} 
+		# }
+	} 
+ 
+	war_goal = restore_empire 
+} 
+
+cb_reclaim_empire = { 
+	prerequisites = { 
+		is_neighbor_of = FROM
+		FROM = { 
+			primary_culture = roman
+			government_rank = 3
+		 } 
+		 any_owned_province = { 
+			OR = { 
+				region = france_region 
+				region = iberia_region 
+				region = maghreb_region 
+			} 
+		}
+	} 
+ 
+	war_goal = reclaim_empire 
+} 

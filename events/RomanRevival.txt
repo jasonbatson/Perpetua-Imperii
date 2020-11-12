@@ -1,0 +1,69 @@
+namespace = romanrevival
+
+country_event = {
+	id = romanrevival.1
+	title = romanrevival.1.t
+	desc = romanrevival.1.d
+	picture = ARTWORK_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		add_stability = -5
+		hidden_effect = {
+			if = {
+				limit = { 119 = { owned_by = ROOT } }
+				119 = { 
+					area = { 
+						add_core = R01 
+						add_unrest = 15 
+						change_culture = roman
+						local_years_of_nationalism = 50
+					} 
+				}
+			}
+			if = {
+				limit = { 118 = { owned_by = ROOT } }
+				118 = { 
+					area = { 
+						add_core = R01 
+						add_unrest = 15 
+						change_culture = roman 
+						local_years_of_nationalism = 50
+					} 
+				}
+			}
+		}
+	}
+	
+	option = {
+        name = romanrevival.1
+        ai_chance = { factor = 100 }
+	}
+}
+
+country_event = {
+	id = romanrevival.2
+	title = romanrevival.2.t
+	desc = romanrevival.2.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		add_stability = 5
+	}
+	
+	option = {
+        name = romanrevival.1
+        ai_chance = { factor = 100 }
+	}
+}
