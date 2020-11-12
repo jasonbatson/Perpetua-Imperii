@@ -3,21 +3,7 @@ add_government_reform = feudalism_reform
 primary_culture = roman
 religion = catholic
 technology_group = western
-capital = 114 # Ravenna
+capital = 118 # Rome
 historical_friend = BYZ #Byzantium
 historical_rival = PAP
 add_army_professionalism = 0.10
-
-1444.01.01 = {
-	monarch = {
-		name = "Julius XX"
-		dynasty = "Nepos"
-		birth_date = 1425.2.8
-		adm = 6
-		dip = 6
-		mil = 6
-		leader = {	name = "Julius XX"	type = general	fire = 6	shock = 6	manuever = 6	siege = 4 }
-	}
-}
-
-1444.1.1 = { leader = {	name = "Flavius Nepos"	type = general	fire = 6	shock = 6	manuever = 6	siege = 4	death_date = 1463.5.29 } }
