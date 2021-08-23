@@ -8,5 +8,5 @@ tags={
 	"Religion"
 	"Technologies"
 }
-supported_version="1.30.*.*"
+supported_version="1.31.*.*"
 path="mod/Perpetua-Imperii"

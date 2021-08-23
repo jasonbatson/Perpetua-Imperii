@@ -14,22 +14,14 @@ roman_revival = {
 	
 	can_stop = {
 		NOT = {
-			R01 = {
-				num_of_owned_provinces_with = {
-					value = 1
-					culture = roman
-				}
-			}
+			exists = R01
 		}
 	}
 	
 	progress = {
 		modifier = {
-			factor = 30
-			num_of_owned_provinces_with = {
-				value = 1
-				unrest = 0
-			}
+			factor = 100
+			exists = R01
 		}
 		
 	}
@@ -38,12 +30,7 @@ roman_revival = {
 	
 	can_end = {
 		NOT = {
-			R01 = {
-				num_of_owned_provinces_with = {
-					value = 1
-					culture = roman
-				}
-			}
+			exists = R01
 		}
 	}
 	

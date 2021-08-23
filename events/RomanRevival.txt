@@ -1,5 +1,6 @@
 namespace = romanrevival
 
+# Start of disaster
 country_event = {
 	id = romanrevival.1
 	title = romanrevival.1.t
@@ -13,30 +14,8 @@ country_event = {
 	}
 	
 	immediate = {
-		add_stability = -5
 		hidden_effect = {
-			if = {
-				limit = { 119 = { owned_by = ROOT } }
-				119 = { 
-					area = { 
-						add_core = R01 
-						add_unrest = 15 
-						change_culture = roman
-						local_years_of_nationalism = 50
-					} 
-				}
-			}
-			if = {
-				limit = { 118 = { owned_by = ROOT } }
-				118 = { 
-					area = { 
-						add_core = R01 
-						add_unrest = 15 
-						change_culture = roman 
-						local_years_of_nationalism = 50
-					} 
-				}
-			}
+			add_stability = -5
 		}
 	}
 	
@@ -46,6 +25,7 @@ country_event = {
 	}
 }
 
+# End of disaster
 country_event = {
 	id = romanrevival.2
 	title = romanrevival.2.t
@@ -64,6 +44,36 @@ country_event = {
 	
 	option = {
         name = romanrevival.1
+        ai_chance = { factor = 100 }
+	}
+}
+
+# Random provinces becoming Roman
+province_event = {
+	id = romanrevival.3
+	title = romanrevival.3.t
+	desc = romanrevival.3.d
+	picture = ARTWORK_eventPicture
+
+	trigger = {
+		is_core = PAP
+		region = italy_region
+		NOT = { culture = roman }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		add_core = R01 
+		add_unrest = 15 
+		change_culture = roman 
+		local_years_of_nationalism = 50
+	}
+	
+	option = {
+        name = romanrevival.3.a
         ai_chance = { factor = 100 }
 	}
 }

@@ -43,6 +43,9 @@ country_decisions = {
 				}
 			}
 		}
+		allow = {
+			NOT = { PAP = { has_opinion = { who = root value = -50 } } }
+		}
 		effect = {
 			PAP = {
 				add_country_modifier = {
@@ -55,9 +58,8 @@ country_decisions = {
 
 	rom_embrace_orthodox = {
 		potential = {
-			tag = R01
+			tag = R0M
 			religion = catholic
-			primary_culture = roman
 		}
 		effect = {
 			change_religion = orthodox

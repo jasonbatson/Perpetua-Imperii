@@ -20,7 +20,7 @@ rom_rome_reclaimed = {
 }
 
 rom_denounced_pap = {
-	legitimacy = 2
+	legitimacy = -2
 	diplomatic_reputation = -5
 	land_morale = -0.25
 	global_unrest = 10
